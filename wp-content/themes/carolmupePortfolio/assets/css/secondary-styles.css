@@ -5,7 +5,7 @@ Theme URI: https://felipeg005.github.io/Portfolio/
 Author: Juan Felipe Gomez Dev
 Author URI: https://felipeg005.github.io/Portfolio/
 Description: The carolmupe theme is a custom and nice design to create a portfolio for one of the greatest designer ever
-Version: 1.0.0
+Version: carajo
 License: MIT License Copyright (c) 2023 Juan Felipe Gomez
 License URI: https://felipeg005.github.io/Portfolio/
 Tags: Designer Portfolio, Awesome design, 3D portfolio, Graphic designer
@@ -14,5 +14,5 @@ Text Domain: carolmupe
 */
 
 p {
-    color: blue;
+    color: red;
 }
