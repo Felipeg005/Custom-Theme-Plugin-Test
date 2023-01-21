@@ -14,6 +14,7 @@ $introduction = get_field('introduction');
     <p><?php echo $introduction; ?></p>
     <p><?php echo get_template_directory_uri(); ?></p>
     <p><?php echo get_stylesheet_uri(); ?></p>
+    <p><?php echo wp_title('', true); ?></p>
 </div>
 
 

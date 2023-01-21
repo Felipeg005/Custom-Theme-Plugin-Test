@@ -1,4 +1,10 @@
 <?php
+/**
+ * carolmupePortfolio functions
+ * 
+ * Theme functions
+ * 
+ */
 
 /**
  * Carolmupe Add Scripts Function
@@ -9,6 +15,7 @@
  * 
  * @return void
  */
+
 function carolmupe_add_scripts() {
     // Styles
     wp_enqueue_style( 'style',  get_stylesheet_uri(), array(), wp_get_theme()->get('Version') , 'all' );
