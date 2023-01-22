@@ -7,19 +7,22 @@
 
 namespace Carolmupe\Inc\Helpers;
 
-/**
- * Auto loader function.
- *
- * @param string $resource Source namespace.
- *
- * @return void
- */
+spl_autoload_register( function ($class) {
+    // Convert path in array
+    $class_array = explode("\\", $class);
 
-spl_autoload_register( function () {
-    if( strpos(get_called_class(), 'class') ) {
-        require_once CAROLMUPE_ROOT_PATH . 'inc/classes/' . get_called_class() . '.php';
-    }
-    if( strpos(get_called_class(), 'traits') ) {
-        require_once CAROLMUPE_ROOT_PATH . 'inc/traits/' . get_called_class() . '.php';
+    // Etract the class name
+    $class_name = array_pop($class_array);
+
+    // Find fill class directorie
+    $class_dir = array_slice($class_array, 1);
+    $class_dir = strtolower(join('/' , $class_dir));
+
+    // Define filename for use
+    $file_name = CAROLMUPE_DIR . '/' .$class_dir . '/' . $class_name . '.php';
+
+    // If the file is readable make the call
+    if( is_readable($file_name) ) {
+        require_once $file_name;
     }
 });
