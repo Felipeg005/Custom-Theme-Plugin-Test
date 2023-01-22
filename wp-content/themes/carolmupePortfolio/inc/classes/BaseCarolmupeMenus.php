@@ -35,13 +35,12 @@ class BaseCarolmupeMenus {
         return array_key_exists($location, $locations) ? $locations[ $location ] : '';
     }
 
-    public function get_children_ids( $menu_items ) {
+    public function get_children_ids( $menu_items, $menu_id ) {
         $child_items = [];
 
         if ( ! empty( $menu_items ) ) {
             foreach( $menu_items as $menu ) {
-                print_r($menu->menu_item_parent) . PHP_EOL;
-                if( $menu->menu_item_parent ) {
+                if(  intval($menu->menu_item_parent) === $menu_id ) {
                     array_push( $child_items , $menu );
                 }
             }
