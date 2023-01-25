@@ -1,3 +1,6 @@
 /wp-admin
 /includes
 /wp-admin
+/.htaccess
+/wp*
+/index.php
