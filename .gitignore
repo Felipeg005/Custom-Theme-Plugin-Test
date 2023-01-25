@@ -1,5 +1,7 @@
 /wp-admin
-/includes
+/wp-includes
 /wp-admin
 /.htaccess
 /index.php
+*.php
+*.html
