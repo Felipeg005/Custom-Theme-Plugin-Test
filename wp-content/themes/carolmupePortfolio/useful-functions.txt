@@ -1,0 +1,50 @@
+get_template_directory_uri()
+
+get_template_directory()
+
+add_theme_support( 'title-tag' );
+
+add_action( 'wp_enqueue_scripts', [ $this , 'register_styles' ] );
+
+wp_register_style( 'style',  get_stylesheet_uri(), array(), wp_get_theme()->get('Version') , 'all' );
+
+wp_enqueue_styles( 'custom' );
+
+wp_register_script( 'custom', CAROLMUPE_DIR_URI . '/assets/js/custom.js', array(), wp_get_theme()->get('Version'), true );
+
+wp_enqueue_script( 'custom' );
+
+register_nav_menus( array(
+            'carolmupe-header-menu' => esc_html__( 'Header Menu' ),
+            'carolmupe-extra-menu' => esc_html__( 'Extra Menu' )
+           )
+        );
+
+get_nav_menu_locations();
+
+add_action( 'init', [ $this , 'setup_theme_menus' ] );
+
+current_user_can()
+
+The Loop
+
+if ( have_posts() ) {
+    while( have_posts() ) {
+        the_post();
+
+    }
+}
+
+metaboxes
+
+add_meta_box()
+
+nonces  protect forms temporary tokens
+
+wp_nonce_url()
+wp_nonce_field()
+wp_create_nonce()
+
+check_admin_referer
+check_ajax_referer
+wp_verify_nonce
